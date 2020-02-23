@@ -460,7 +460,7 @@ function GenerateReport(Language) {
 	');
 	//ReportCanvas001 = PrepareChart002("ReportCanvas001");
 	mywindow = PrintElem('CompleteReport', [
-		'report-print.css'
+		'report-print.css', 'https://cdn.jsdelivr.net/gh/skgadi/wf@1.0/fonts/cmun-serif.min.css'
 		], [
 		'https://code.jquery.com/jquery-3.3.1.slim.min.js'
 		]);
