@@ -1,0 +1,14 @@
+body {
+    font-family: 'Times New Roman';font-size: 16px;
+}
+p {
+	text-align: justify;
+}
+.Figure {
+	text-align: center;
+}
+/*
+@media print {
+    h1, h2 {page-break-before: always;}
+}
+*/

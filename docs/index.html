@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Data Analyzer for Universal Testing Machine  - Suresh Kumar Gadi</title>
+	
+	<meta charset=utf-8>
+	
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+	
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skgadi/wf@1.0/fonts/cmun-serif.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/skgadi/wf@1.0/fonts/cmun-typewriter.min.css">
+	
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
+	
+	<link rel="stylesheet" href="style.css">
+	
+	
+  </head>
+
+  <body>
+  <a href="https://github.com/skgadi/utm" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:teal; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+	  <p class="w3-center"><img src="android-chrome-512x512.png" style="width: 100px;" alt="logo"></p>
+	  <h1 class="w3-center w3-margin-0"><p class="w3-large">Data Analyzer</p><p class="w3-small">for</p><p class="w3-large">Universal Testing Machine</p></h1>
+  
+	<h2 class="w3-theme w3-center w3-medium">Enter the test-piece details</h2>
+	<div class="LimitWidth">
+		<label>Initial area, $A_0$, measured in $\mbox{mm}^2$</label>
+		<input id="A_0" class="UserInputItem0 w3-input w3-border w3-border-theme" type="number" value= "30.7483">
+		<label>Initial length, $L_0$, measured in $\mbox{mm}$</label>
+		<input id="L_0" class="UserInputItem0 w3-input w3-border w3-border-theme" type="number" value= "25.4">
+		<label>Specific offset, $X$, value in percent</label>
+		<input id="X" class="UserInputItem0 w3-input w3-border w3-border-theme" type="number" value= "0.2">
+	</div>
+	<h2 class="w3-theme w3-center w3-medium">Enter the Universal Testing Machine's data</h2>
+	<div class="LimitWidth">
+		<textarea id="InText" style="width:100%; height: 200px; display: block;" class="UserInputItem0 w3-code jsHigh notranslate w3-margin-0" contenteditable="true" placeholder="Copy the two columns information from a spread sheet and paste it here. The first column should be Elongation in milli-meter and the second column should be Load in Newtons."></textarea>
+		<div class="w3-row">
+			<div class="w3-col m3 l3 s12">
+				<button id="SampleData0" onclick="LoadSampleData(0)" class="UserInputItem0 w3-button w3-white w3-ripple w3-block w3-border w3-border-theme">Sample data 0</button>
+			</div>
+			<div class="w3-col m3 l3 s12">
+				<button id="SampleData1" onclick="LoadSampleData(1)" class="UserInputItem0 w3-button w3-white w3-ripple w3-block w3-border w3-border-theme">Sample data 1</button>
+			</div>
+			<div class="w3-col m3 l3 s12">
+				<button id="SampleData2" onclick="LoadSampleData(2)" class="UserInputItem0 w3-button w3-white w3-ripple w3-block w3-border w3-border-theme">Sample data 2</button>
+			</div>
+			<div class="w3-col m3 l3 s12">
+				<button id="SampleData3" onclick="LoadSampleData(3)" class="UserInputItem0 w3-button w3-white w3-ripple w3-block w3-border w3-border-theme">Sample data 3</button>
+			</div>
+		</div>
+	</div>
+	<h2 class="w3-theme w3-center w3-medium">Calculations</h2>
+	<div class="LimitWidth">
+		<label>Setting: Tolerance to find the slope</label>
+		<input id="RSquaredTestForSize" class="UserInputItem0 w3-input w3-border w3-border-theme" type="number" value= "100">
+		<label class="UserInputItem2" >Additioanl Information: Type of Test</label>
+		<select id="TestType" class="UserInputItem2 w3-select w3-border w3-border-theme">
+			<option>Tension</option>
+		</select>
+		<p/>
+		<div class="w3-row">
+			<div class="w3-col m6 l6 s12">
+				<button id="GenerateBtn" onclick="PerformCalculations()" class="UserInputItem0 w3-button w3-white w3-ripple w3-block w3-border w3-border-theme">Calculate</button>
+			</div>
+			<div class="w3-col m6 l6 s12">
+				<button id="GenerateBtn" onclick="Reset()" class="UserInputItem1 w3-button w3-white w3-ripple w3-block w3-border w3-border-red">Reset</button>
+			</div>
+		</div>
+	</div>
+	<h2 class="w3-theme w3-center w3-medium">Additional information for the report</h2>
+	<div class="LimitWidth">
+		<label class="UserInputItem2" >Additioanl Information: UTM Brand</label>
+		<input id="UTM_Brand" class="UserInputItem2 w3-input w3-border w3-border-theme" value= "Manufacturer">
+		<label class="UserInputItem2" >Additioanl Information: UTM Model</label>
+		<input id="UTM_Model" class="UserInputItem2 w3-input w3-border w3-border-theme" value= "Model">
+		<label class="UserInputItem2" >Additioanl Information: UTM Serial number</label>
+		<input id="UTM_SerialNo" class="UserInputItem2 w3-input w3-border w3-border-theme" value= "SN#123456">
+		<p/>
+		<button id="GenerateReportEnglish" onclick="GenerateReport(0)" class="w3-button w3-white w3-ripple w3-block w3-border w3-border-theme"><i class="fa fa-files-o fa-fw" aria-hidden="true"></i>&nbsp;Generate report</button>
+	</div>
+	<h2 class="w3-theme w3-center w3-medium">Acknowledgements</h2>
+	<div class="LimitWidth">
+		<p class="w3-margin-0">Thanks to:</p>
+		<p class="w3-margin-0" style="margin-left: 2.5em;"><a target="_blank" href="https://simplestatistics.org/">Simple Statistics</a> for providing basic statistics algorithms,</p>
+		<p class="w3-margin-0" style="margin-left: 2.5em;"><a target="_blank" href="https://www.mathjax.org/">MathJax</a> for providing mathematical notations,</p>
+		<p class="w3-margin-0" style="margin-left: 2.5em;"><a target="_blank" href="https://github.com/">W3.CSS</a> for providing CSS, and</p>
+		<p class="w3-margin-0" style="margin-left: 2.5em;"><a target="_blank" href="https://www.mathjax.org/">GitHub</a> for providing cloud based version control repository and hosting.</p>
+		<p/>
+	</div>
+	
+	<div class="w3-theme w3-center w3-padding-32">Copyright &copy; 2020 Suresh Kumar Gadi</div>
+
+
+	<div id="CompleteReport" style="display: none;"></div>
+
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/regression/1.4.0/regression.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="https://unpkg.com/simple-statistics@7.0.8/dist/simple-statistics.min.js" crossorigin="anonymous"></script>
+ 	<script src="notify.min.js" type="text/javascript" charset="utf-8"></script>
+ 	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"  crossorigin="anonymous"></script>
+  </body>
+</html>
